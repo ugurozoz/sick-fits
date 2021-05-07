@@ -1,14 +1,14 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function useForm(initial = {}) {
   // Create a state object for our inputs
   const [inputs, setInputs] = useState(initial);
+  const initialValues = Object.values(initial).join('');
 
-  // {
-  //   name: 'wes',
-  //   description: 'nice shoes',
-  //   price:1000,
-  // }
+  useEffect(() => {
+    // This funciton run when the things we are watsching change
+    setInputs(initial);
+  }, [initialValues]);
 
   function handleChange(e) {
     let { value, name, type } = e.target;
@@ -17,7 +17,7 @@ export default function useForm(initial = {}) {
     }
 
     if (type === 'file') {
-      value = e.target.files[0];
+      [value] = e.target.files;
     }
     setInputs({
       // copy the existing state
