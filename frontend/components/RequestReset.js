@@ -33,6 +33,7 @@ export default function RequestReset() {
     // Send email and password to GQL
     const res = await signup().catch(console.error);
     console.log({ data, loading, error });
+    console.log(res);
     resetForm();
   }
   // const error =
