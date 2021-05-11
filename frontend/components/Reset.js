@@ -38,11 +38,8 @@ export default function Reset({ token }) {
     : undefined;
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log(inputs);
     // Send email and password to GQL
     const res = await reset().catch(console.error);
-    console.log({ data, loading, error });
-    console.log(res);
     resetForm();
   }
 

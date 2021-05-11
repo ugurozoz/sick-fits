@@ -36,14 +36,8 @@ export default function SignUp() {
     e.preventDefault();
     // Send email and password to GQL
     const res = await signup().catch(console.error);
-    console.log({ data, loading, error });
     resetForm();
   }
-  // const error =
-  //   data?.authenticateUserWithPassword.__typename ===
-  //   'UserAuthenticationWithPasswordFailure'
-  //     ? data?.authenticateUserWithPassword
-  //     : undefined;
 
   return (
     <Form method="POST" onSubmit={handleSubmit}>
