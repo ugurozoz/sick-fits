@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { createAuth } from '@keystone-next/auth';
 import { config, createSchema } from '@keystone-next/keystone/schema';
 
@@ -12,7 +13,6 @@ import { CartItem } from './schemas/CartItem';
 import { Product } from './schemas/Product';
 import { User } from './schemas/User';
 import { ProductImage } from './schemas/ProductImage';
-import 'dotenv/config';
 import { insertSeedData } from './seed-data';
 import { sendPasswordResetEmail } from './lib/mail';
 
