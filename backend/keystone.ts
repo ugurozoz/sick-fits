@@ -1,3 +1,4 @@
+import { Role } from './schemas/Role';
 import 'dotenv/config';
 import { createAuth } from '@keystone-next/auth';
 import { config, createSchema } from '@keystone-next/keystone/schema';
@@ -64,6 +65,7 @@ export default withAuth(
       CartItem,
       OrderItem,
       Order,
+      Role,
     }),
     extendGraphqlSchema,
     ui: {
